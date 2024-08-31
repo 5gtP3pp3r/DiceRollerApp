@@ -8,7 +8,7 @@ namespace DiceRollerApp.Class
 {
     public sealed class DiceImages
     {
-        private const string path = "Ressources/Images/";
+        private const string path = "Resources/Images/";
         private const string png = ".png";
 
         private readonly Dictionary<int, string[]> DiceImagePaths;
