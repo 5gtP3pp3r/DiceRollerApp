@@ -1,35 +1,194 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="DiceRollerApp.MainPage">
+             x:Class="DiceRollerApp.MainPage"
+             BackgroundColor="Beige">
 
     <ScrollView>
         <VerticalStackLayout
-            Padding="30,0"
+            Padding="20,0"
             Spacing="25">
-            <Image
-                Source="dotnet_bot.png"
-                HeightRequest="185"
-                Aspect="AspectFit"
-                SemanticProperties.Description="dot net bot in a race car number eight" />
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="65"/>
+                    <RowDefinition Height="325"/>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="90"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
 
-            <Label
-                Text="Hello, World!"
-                Style="{StaticResource Headline}"
-                SemanticProperties.HeadingLevel="Level1" />
+                <StackLayout Grid.Row="0">
+                    <Button x:Name="Translate"                   
+                            WidthRequest="60"
+                            HeightRequest="40"
+                            Margin="4"
+                            VerticalOptions="Center"
+                            HorizontalOptions="End"
+                            Clicked="OnClickTranslate" 
+                            BackgroundColor="Beige">
+                        <Button.ImageSource>
+                            <FileImageSource File="Ressources/Images/union_jack_20_11.png"/>
+                        </Button.ImageSource>
+                    </Button>
+                </StackLayout>
 
-            <Label
-                Text="Welcome to &#10;.NET Multi-platform App UI"
-                Style="{StaticResource SubHeadline}"
-                SemanticProperties.HeadingLevel="Level2"
-                SemanticProperties.Description="Welcome to dot net Multi platform App U I" />
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.2*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="0.2*"/>
+                    </Grid.ColumnDefinitions>
 
-            <Button
-                x:Name="CounterBtn"
-                Text="Click me" 
-                SemanticProperties.Hint="Counts the number of times you click"
-                Clicked="OnCounterClicked"
-                HorizontalOptions="Fill" />
+                    <StackLayout Grid.Column="0">
+                        <Image Source="Ressources/Images/LOGO.png" 
+                               WidthRequest="50" 
+                               HeightRequest="50" 
+                               Margin="10,8,0,0"/>
+                    </StackLayout>
+
+                    <StackLayout Grid.Column="1"
+                                 VerticalOptions="Center">
+                        <Label x:Name="AppTitle"
+                              Text="Lanceur de Dés"
+                              FontSize="30"
+                              TextColor="black"
+                              VerticalTextAlignment="Center"
+                              HorizontalTextAlignment="Center"/>
+                    </StackLayout>
+
+                    <StackLayout Grid.Column="2">
+                        <Image Source="Images/LOGO.png" 
+                               WidthRequest="50" 
+                               HeightRequest="50" 
+                               Margin="0,8,10,0"/>
+                    </StackLayout>
+                </Grid>
+
+                <Grid Grid.Row="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <StackLayout Grid.Column="0">
+                        <Label x:Name="NbFaces"
+                               Text="Type de dé:" 
+                               TextColor="black"
+                               Margin="5"
+                               HorizontalOptions="Center"/>
+                        <StackLayout  HorizontalOptions="Center">
+                            <RadioButton GroupName="Dice" x:Name="FourFaces" Content="Dé 4" 
+                                         TextColor="black" BorderColor="White" Margin="5" IsChecked="True"/>
+                            <RadioButton GroupName="Dice" x:Name="SixFaces" Content="Dé 6" 
+                                         TextColor="black" Margin="5"/>
+                            <RadioButton GroupName="Dice" x:Name="EightFaces" Content="Dé 8" 
+                                         TextColor="black" Margin="5"/>
+                            <RadioButton GroupName="Dice" x:Name="TenFaces" Content="Dé 10" 
+                                         TextColor="black" Margin="5"/>
+                            <RadioButton GroupName="Dice" x:Name="TwentyFaces" Content="Dé 20" 
+                                         TextColor="black" Margin="5"/>
+                        </StackLayout>
+                    </StackLayout>
+
+                    <StackLayout Grid.Column="1">
+                        <Label x:Name="NbDices"
+                               Text="Nombre de dés:"
+                               TextColor="black"
+                               Margin="5"
+                               HorizontalOptions="Center"/>
+                        <StackLayout HorizontalOptions="Center">
+                            <RadioButton GroupName="NbDices" x:Name="OneDice" Content="1" 
+                                         TextColor="black" Margin="5" IsChecked="True"/>
+                            <RadioButton GroupName="NbDices" x:Name="TwoDices" Content="2" 
+                                         TextColor="black" Margin="5"/>
+                            <RadioButton GroupName="NbDices" x:Name="ThreeDices" Content="3" 
+                                         TextColor="black" Margin="5"/>
+                            <RadioButton GroupName="NbDices" x:Name="FourDices" Content="4" 
+                                         TextColor="black" Margin="5"/>
+                            <RadioButton GroupName="NbDices" x:Name="FiveDices" Content="5" 
+                                         TextColor="black" Margin="5"/>
+                        </StackLayout>
+                    </StackLayout>
+
+                    <StackLayout Grid.Column="2">
+                        <Label x:Name="Modifier"
+                               Text="Modificateur:"
+                               TextColor="black"
+                               Margin="5"
+                               HorizontalOptions="Center"/>
+                        <StackLayout HorizontalOptions="Center">
+                            <RadioButton GroupName="Modifier" x:Name="Zero" Content="0 pts" 
+                                         TextColor="black" Margin="5" IsChecked="True"/>
+                            <RadioButton GroupName="Modifier" x:Name="One" Content="1 pts" 
+                                         TextColor="black" Margin="5"/>
+                            <RadioButton GroupName="Modifier" x:Name="Two" Content="2 pts" 
+                                         TextColor="black" Margin="5"/>
+                            <RadioButton GroupName="Modifier" x:Name="Three" Content="3 pts" 
+                                         TextColor="black" Margin="5"/>
+                            <RadioButton GroupName="Modifier" x:Name="Four" Content="4 pts" 
+                                         TextColor="black" Margin="5"/>
+                        </StackLayout>
+                    </StackLayout>
+
+                </Grid>
+                <StackLayout Grid.Row="3"
+                             x:Name="DiceImagesRow" 
+                             Orientation="Horizontal" 
+                             HorizontalOptions="Center" 
+                             VerticalOptions="Center">
+                </StackLayout>
+
+                <StackLayout Grid.Row="4"
+                             HorizontalOptions="Center"
+                             VerticalOptions="Center">
+                    <Label x:Name="Result" 
+                           Text="Résultat"
+                           FontSize="20"
+                           TextColor="black"
+                           HorizontalTextAlignment="Center"
+                           VerticalTextAlignment="Center"/>
+                </StackLayout>
+
+                <StackLayout Grid.Row="5"
+                             VerticalOptions="Center">
+                    <Label x:Name="outputTextBox"
+                           FontSize="30"
+                           TextColor="black"
+                           VerticalTextAlignment="Center"
+                           HorizontalTextAlignment="Center"
+                           WidthRequest="50"
+                           HeightRequest="35"
+                           VerticalOptions="Center"
+                           HorizontalOptions="Center"
+                           BackgroundColor="Beige"/>
+                </StackLayout>
+
+                <StackLayout Grid.Row="6"
+                             VerticalOptions="Center">
+                    <Button x:Name="Roll"
+                            Text="Lancer"
+                            FontSize="20"
+                            TextColor="White"
+                            WidthRequest="100"
+                            HeightRequest="50"
+                            BackgroundColor="DarkBlue"
+                            VerticalOptions="Center"
+                            Clicked="OnClickRollDices"/>
+                </StackLayout>
+
+                <StackLayout Grid.Row="7">
+                    <Label x:Name="Signature"
+                           HorizontalOptions="End"
+                           Text="Mon premier app!                 par WC"
+                           FontSize="8"
+                           TextColor="Black"
+                           Margin="0,0,10,0"/>
+                </StackLayout>
+            </Grid>
         </VerticalStackLayout>
     </ScrollView>
 
