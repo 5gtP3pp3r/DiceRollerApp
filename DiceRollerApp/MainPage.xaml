@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="DiceRollerApp.MainPage"
-             BackgroundColor="Beige">
+             BackgroundColor="Bisque">
 
     <ScrollView>
         <VerticalStackLayout
@@ -10,10 +10,10 @@
             Spacing="25">
             <Grid>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="45"/>
                     <RowDefinition Height="65"/>
                     <RowDefinition Height="325"/>
-                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="70"/>
                     <RowDefinition Height="50"/>
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="90"/>
@@ -23,12 +23,12 @@
                 <StackLayout Grid.Row="0">
                     <Button x:Name="Translate"                   
                             WidthRequest="60"
-                            HeightRequest="40"
+                            HeightRequest="50"
                             Margin="4"
                             VerticalOptions="Center"
                             HorizontalOptions="End"
                             Clicked="OnClickTranslate" 
-                            BackgroundColor="Beige">
+                            BackgroundColor="Bisque">
                         <Button.ImageSource>
                             <FileImageSource File="Resources/Images/union_jack_20_11.png"/>
                         </Button.ImageSource>
@@ -77,60 +77,63 @@
                     <StackLayout Grid.Column="0">
                         <Label x:Name="NbFaces"
                                Text="Type de dé:" 
+                               FontSize="12"
                                TextColor="black"
                                Margin="5"
                                HorizontalOptions="Center"/>
                         <StackLayout  HorizontalOptions="Center">
                             <RadioButton GroupName="Dice" x:Name="FourFaces" Content="Dé 4" 
-                                         TextColor="black" BorderColor="White" Margin="5" IsChecked="True"/>
+                                         TextColor="black" Margin="5" FontSize="12" IsChecked="True"/>
                             <RadioButton GroupName="Dice" x:Name="SixFaces" Content="Dé 6" 
-                                         TextColor="black" Margin="5"/>
+                                         TextColor="black" Margin="5" FontSize="12"/>
                             <RadioButton GroupName="Dice" x:Name="EightFaces" Content="Dé 8" 
-                                         TextColor="black" Margin="5"/>
+                                         TextColor="black" Margin="5" FontSize="12"/>
                             <RadioButton GroupName="Dice" x:Name="TenFaces" Content="Dé 10" 
-                                         TextColor="black" Margin="5"/>
+                                         TextColor="black" Margin="5" FontSize="12"/>
                             <RadioButton GroupName="Dice" x:Name="TwentyFaces" Content="Dé 20" 
-                                         TextColor="black" Margin="5"/>
+                                         TextColor="black" Margin="5" FontSize="12"/>
                         </StackLayout>
                     </StackLayout>
 
                     <StackLayout Grid.Column="1">
                         <Label x:Name="NbDices"
                                Text="Nombre de dés:"
+                               FontSize="12"
                                TextColor="black"
                                Margin="5"
                                HorizontalOptions="Center"/>
                         <StackLayout HorizontalOptions="Center">
                             <RadioButton GroupName="NbDices" x:Name="OneDice" Content="1" 
-                                         TextColor="black" Margin="5" IsChecked="True"/>
+                                         TextColor="black" Margin="5" FontSize="12" IsChecked="True"/>
                             <RadioButton GroupName="NbDices" x:Name="TwoDices" Content="2" 
-                                         TextColor="black" Margin="5"/>
+                                         TextColor="black" Margin="5" FontSize="12"/>
                             <RadioButton GroupName="NbDices" x:Name="ThreeDices" Content="3" 
-                                         TextColor="black" Margin="5"/>
+                                         TextColor="black" Margin="5" FontSize="12"/>
                             <RadioButton GroupName="NbDices" x:Name="FourDices" Content="4" 
-                                         TextColor="black" Margin="5"/>
+                                         TextColor="black" Margin="5" FontSize="12"/>
                             <RadioButton GroupName="NbDices" x:Name="FiveDices" Content="5" 
-                                         TextColor="black" Margin="5"/>
+                                         TextColor="black" Margin="5" FontSize="12"/>
                         </StackLayout>
                     </StackLayout>
 
                     <StackLayout Grid.Column="2">
                         <Label x:Name="Modifier"
                                Text="Modificateur:"
+                               FontSize="12"
                                TextColor="black"
                                Margin="5"
                                HorizontalOptions="Center"/>
                         <StackLayout HorizontalOptions="Center">
                             <RadioButton GroupName="Modifier" x:Name="Zero" Content="0 pts" 
-                                         TextColor="black" Margin="5" IsChecked="True"/>
+                                         TextColor="black" Margin="5" FontSize="12" IsChecked="True"/>
                             <RadioButton GroupName="Modifier" x:Name="One" Content="1 pts" 
-                                         TextColor="black" Margin="5"/>
+                                         TextColor="black" Margin="5" FontSize="12"/>
                             <RadioButton GroupName="Modifier" x:Name="Two" Content="2 pts" 
-                                         TextColor="black" Margin="5"/>
+                                         TextColor="black" Margin="5" FontSize="12"/>
                             <RadioButton GroupName="Modifier" x:Name="Three" Content="3 pts" 
-                                         TextColor="black" Margin="5"/>
+                                         TextColor="black" Margin="5" FontSize="12"/>
                             <RadioButton GroupName="Modifier" x:Name="Four" Content="4 pts" 
-                                         TextColor="black" Margin="5"/>
+                                         TextColor="black" Margin="5" FontSize="12"/>
                         </StackLayout>
                     </StackLayout>
 
@@ -147,7 +150,7 @@
                              VerticalOptions="Center">
                     <Label x:Name="Result" 
                            Text="Résultat"
-                           FontSize="20"
+                           FontSize="25"
                            TextColor="black"
                            HorizontalTextAlignment="Center"
                            VerticalTextAlignment="Center"/>
@@ -156,15 +159,15 @@
                 <StackLayout Grid.Row="5"
                              VerticalOptions="Center">
                     <Label x:Name="outputTextBox"
-                           FontSize="30"
+                           FontSize="35"
                            TextColor="black"
                            VerticalTextAlignment="Center"
                            HorizontalTextAlignment="Center"
                            WidthRequest="50"
-                           HeightRequest="35"
+                           HeightRequest="40"
                            VerticalOptions="Center"
                            HorizontalOptions="Center"
-                           BackgroundColor="Beige"/>
+                           BackgroundColor="Bisque"/>
                 </StackLayout>
 
                 <StackLayout Grid.Row="6"
