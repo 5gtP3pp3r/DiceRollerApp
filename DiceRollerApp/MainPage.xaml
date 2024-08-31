@@ -30,7 +30,7 @@
                             Clicked="OnClickTranslate" 
                             BackgroundColor="Beige">
                         <Button.ImageSource>
-                            <FileImageSource File="Ressources/Images/union_jack_20_11.png"/>
+                            <FileImageSource File="Resources/Images/union_jack_20_11.png"/>
                         </Button.ImageSource>
                     </Button>
                 </StackLayout>
@@ -43,7 +43,7 @@
                     </Grid.ColumnDefinitions>
 
                     <StackLayout Grid.Column="0">
-                        <Image Source="Ressources/Images/LOGO.png" 
+                        <Image Source="Resources/Images/LOGO.png" 
                                WidthRequest="50" 
                                HeightRequest="50" 
                                Margin="10,8,0,0"/>
