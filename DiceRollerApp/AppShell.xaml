@@ -5,7 +5,8 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:DiceRollerApp"
     Shell.FlyoutBehavior="Disabled"
-    Title="DiceRollerApp">
+    Title="DiceRollerApp"
+    Shell.NavBarIsVisible="False">
 
     <ShellContent
         Title="Home"
