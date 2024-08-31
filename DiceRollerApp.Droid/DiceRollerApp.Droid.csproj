@@ -10,6 +10,17 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+	  <None Remove="Resources\mipmap-hdpi\appicon_foreground.png" />
+	  <None Remove="Resources\mipmap-mdpi\appicon.png" />
+	  <None Remove="Resources\mipmap-mdpi\appicon_foreground.png" />
+	  <None Remove="Resources\mipmap-xhdpi\appicon.png" />
+	  <None Remove="Resources\mipmap-xhdpi\appicon_foreground.png" />
+	  <None Remove="Resources\mipmap-xxhdpi\appicon.png" />
+	  <None Remove="Resources\mipmap-xxhdpi\appicon_foreground.png" />
+	  <None Remove="Resources\mipmap-xxxhdpi\appicon.png" />
+	</ItemGroup>
+
+	<ItemGroup>
 		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0" />
